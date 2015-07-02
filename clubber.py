@@ -37,6 +37,11 @@ class ClubberPageSection(BaseTestObject):
         except NoSuchElementException:
             pass
 
+    def check_ranged_present(self):
+        driver = self.driver
+        bp = BaseTestObject(driver)
+        bp.wait_for(self.buy_ranged)
+
     def buy_clubber(self):
         driver = self.driver
         bp = BaseTestObject(driver)
