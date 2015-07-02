@@ -22,7 +22,7 @@ class MonolithTest(unittest.TestCase):
         header = StatsPage(driver)
         max_allowed = 0
         points = 0
-        m_cost = club.get_clubber_cost()emoved
+        m_cost = club.get_clubber_cost()
         try:
             header.import_save()
             driver.refresh()
