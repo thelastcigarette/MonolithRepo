@@ -102,6 +102,7 @@ class MonolithTest(unittest.TestCase):
         ml = DamagePageSection(driver)
         evo = EvoPointPageSection(driver)
         header = StatsPage(driver)
+        club = ClubberPageSection(driver)
         owned = evo.get_scholar_owned()
         cost = evo.get_scholar_cost()
         try:
@@ -113,7 +114,7 @@ class MonolithTest(unittest.TestCase):
         print "Number of available points: " + str(points)
         start = time.time()
         r_present = False
-        while owned < 10 and r_present is False:
+        while owned < 10 or r_present is False:
             ml.click_egg()
             if (time.time() - start) > 30:
                 points = evo.get_evo_points()
@@ -126,6 +127,7 @@ class MonolithTest(unittest.TestCase):
                 start = time.time()
             if points > 600 and r_present is False:
                 evo.purchase_upgrades("02", "a")
+                club.check_ranged_present()
                 r_present = True
         header.export_save()
 
