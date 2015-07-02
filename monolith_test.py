@@ -23,7 +23,6 @@ class MonolithTest(unittest.TestCase):
         max_allowed = 0
         points = 0
         m_cost = club.get_clubber_cost()
-        # this again
         try:
             header.import_save()
             driver.refresh()
