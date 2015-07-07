@@ -49,6 +49,7 @@ class MonolithTest(unittest.TestCase):
                 start_time = time.time()
         header.export_save()
 
+    # Test for buying the first set of upgrades
     def test_2_first_upgrades(self):
         driver = self.driver
         driver.get(self.base_url)
